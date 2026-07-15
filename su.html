@@ -1,0 +1,1169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Students Union | PSG Polytechnic College</title>
+  <style>
+    /* ---------- reset & base ---------- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      background: #f8f6f2;
+      color: #1e1e1e;
+      line-height: 1.7;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    /* ---------- navigation ---------- */
+    .navbar {
+      background: #ffffff;
+      padding: 16px 0;
+      border-bottom: 1px solid #e8e2da;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(8px);
+      background: rgba(255, 255, 255, 0.94);
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      color: #1a1a1a;
+      text-decoration: none;
+    }
+    .logo span {
+      color:  #1a1a1a;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 36px;
+    }
+    .nav-links a {
+      color: #4a4a4a;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 450;
+      letter-spacing: 0.3px;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover {
+      color: #b8954b;
+    }
+
+    /* ---------- hero ---------- */
+    .hero {
+      background: linear-gradient(150deg, #ede8df 0%, #f8f5f0 100%);
+      padding: 72px 0 60px;
+      text-align: center;
+      border-bottom: 1px solid #e0dad2;
+    }
+    .hero .badge {
+      display: inline-block;
+      background: #b8954b;
+      color: #fff;
+      font-size: 11px;
+      letter-spacing: 3px;
+      padding: 4px 22px;
+      border-radius: 40px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+    .hero h1 {
+      font-size: 56px;
+      font-weight: 350;
+      font-family: 'Times New Roman', Georgia, serif;
+      color: #1a1a1a;
+      letter-spacing: -0.5px;
+    }
+    .hero .gold-line {
+      width: 80px;
+      height: 3px;
+      background: #b8954b;
+      margin: 18px auto 20px;
+      border-radius: 4px;
+    }
+    .hero p {
+      font-size: 19px;
+      color: #3d3d3d;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    /* ---------- sections ---------- */
+    .section {
+      padding: 48px 0 40px;
+      border-bottom: 1px solid #e8e2da;
+    }
+    .section:last-of-type {
+      border-bottom: none;
+    }
+
+    .section-title {
+      font-size: 34px;
+      font-weight: 350;
+      font-family: 'Times New Roman', Georgia, serif;
+      margin-bottom: 28px;
+      color: #1a1a1a;
+      border-left: 6px solid #b8954b;
+      padding-left: 20px;
+    }
+    .section-title-sm {
+      font-size: 24px;
+      font-weight: 400;
+      font-family: 'Times New Roman', Georgia, serif;
+      margin: 30px 0 16px;
+      color: #1e1e1e;
+      border-bottom: 2px solid #e0dad2;
+      padding-bottom: 8px;
+    }
+    .section-title-sm-gold {
+      border-bottom-color: #b8954b;
+    }
+
+    /* ---------- cards ---------- */
+    .card {
+      background: #ffffff;
+      border-radius: 18px;
+      padding: 28px 32px;
+      margin-bottom: 28px;
+      box-shadow: 0 2px 16px rgba(0, 0, 0, 0.03);
+      border: 1px solid #eae4dc;
+      transition: 0.2s;
+    }
+    .card:hover {
+      border-color: #d6cdbc;
+    }
+    .card-gold {
+      border-left: 5px solid #b8954b;
+      background: #fcfaf7;
+    }
+
+    /* ---------- grids ---------- */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+    .grid-auto-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 35px;
+    }
+    .grid-auto-4 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 16px;
+    }
+
+    /* ============================================================ */
+    /* IMAGES - LARGE FRAMES */
+    /* ============================================================ */
+    .img-ph {
+      background: #eae4dc;
+      border: 3px solid #d6cdbc;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      padding: 6px;
+    }
+    
+    .img-ph img {
+      width: 100%;
+      height: 100%;
+      object-fit: scale-down;
+      border-radius: 12px;
+      display: block;
+    }
+    
+    .img-ph-circle {
+      border-radius: 50%;
+      width: 220px;
+      height: 220px;
+      min-height: unset;
+      margin: 0 auto 12px;
+      padding: 8px;
+      border: 4px solid #b8954b;
+      background: #ffffff;
+    }
+    .img-ph-circle img {
+      border-radius: 50%;
+      object-fit: scale-down;
+      width: 100%;
+      height: 100%;
+    }
+    
+    .img-ph-circle-sm {
+      border-radius: 50%;
+      width: 170px;
+      height: 170px;
+      min-height: unset;
+      margin: 0 auto 12px;
+      padding: 6px;
+      border: 4px solid #b8954b;
+      background: #ffffff;
+    }
+    .img-ph-circle-sm img {
+      border-radius: 50%;
+      object-fit: scale-down;
+      width: 100%;
+      height: 100%;
+    }
+    
+    .img-ph-logo {
+      width: 150px;
+      height: 150px;
+      min-height: unset;
+      margin: 0 auto 10px;
+      border-radius: 18px;
+      background: #f0ebe3;
+      border: 4px solid #b8954b;
+      padding: 8px;
+    }
+    .img-ph-logo img {
+      border-radius: 14px;
+      object-fit: scale-down;
+      width: 100%;
+      height: 100%;
+    }
+    
+    .img-ph-circle-xs {
+      width: 120px;
+      height: 120px;
+      min-height: unset;
+      margin: 0 auto 10px;
+      padding: 6px;
+      border: 3.5px solid #b8954b;
+      background: #ffffff;
+      border-radius: 50%;
+    }
+    .img-ph-circle-xs img {
+      border-radius: 50%;
+      object-fit: scale-down;
+      width: 100%;
+      height: 100%;
+    }
+
+    /* ---------- team card ---------- */
+    .team-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 28px 20px 24px;
+      text-align: center;
+      border: 1px solid #eae4dc;
+      transition: 0.2s;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .team-card:hover {
+      border-color: #b8954b;
+      box-shadow: 0 6px 24px rgba(0, 0, 0, 0.05);
+    }
+    .team-card .name {
+      font-weight: 600;
+      font-size: 18px;
+      margin-top: 10px;
+      color: #1a1a1a;
+    }
+    .team-card .role {
+      color: #b8954b;
+      font-size: 14px;
+      font-weight: 500;
+    }
+    .team-card .id {
+      color: #8a8a8a;
+      font-size: 13px;
+    }
+
+    /* ---------- tags ---------- */
+    .tag {
+      background: #f0ebe3;
+      padding: 6px 18px;
+      border-radius: 40px;
+      font-size: 14px;
+      color: #1e1e1e;
+      display: inline-block;
+      border: 1px solid #e0dad2;
+      text-align: center;
+    }
+    .tag-gold {
+      background: #b8954b;
+      color: #fff;
+      border-color: #b8954b;
+    }
+
+    /* ---------- lists ---------- */
+    .list-dot {
+      list-style: none;
+      padding-left: 4px;
+    }
+    .list-dot li {
+      padding-left: 24px;
+      position: relative;
+      margin-bottom: 8px;
+    }
+    .list-dot li::before {
+      content: "◆";
+      color: #b8954b;
+      position: absolute;
+      left: 0;
+      font-size: 14px;
+    }
+
+    .list-arrow {
+      list-style: none;
+      padding-left: 4px;
+    }
+    .list-arrow li {
+      padding-left: 24px;
+      position: relative;
+      margin-bottom: 6px;
+    }
+    .list-arrow li::before {
+      content: "→";
+      color: #b8954b;
+      position: absolute;
+      left: 0;
+    }
+
+    /* ---------- flex helpers ---------- */
+    .flex-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 16px;
+      justify-content: center;
+    }
+
+    /* ============================================================ */
+    /* CLUB DETAIL CARD - CENTERED CONTENT */
+    /* ============================================================ */
+    .club-detail {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 36px 40px;
+      margin-bottom: 28px;
+      border: 1px solid #eae4dc;
+      transition: 0.2s;
+      text-align: center;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .club-detail:hover {
+      border-color: #d6cdbc;
+    }
+    
+    .club-detail .club-logo {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 16px;
+    }
+    
+    .club-detail .club-name {
+      font-size: 28px;
+      font-family: 'Times New Roman', Georgia, serif;
+      color: #1a1a1a;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #b8954b;
+      padding-bottom: 12px;
+      display: inline-block;
+    }
+    
+    .club-detail .club-section {
+      margin-bottom: 20px;
+    }
+    
+    .club-detail .club-section-title {
+      color: #b8954b;
+      font-size: 16px;
+      font-weight: 600;
+      display: block;
+      margin-bottom: 6px;
+    }
+    
+    .club-detail .club-section-content {
+      color: #3d3d3d;
+      font-size: 15px;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    
+    .club-detail .faculty-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px 35px;
+      margin-top: 8px;
+    }
+    
+    .club-detail .faculty-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .club-detail .faculty-item .faculty-name {
+      font-size: 14px;
+      font-weight: 500;
+      margin-top: 6px;
+    }
+    
+    .club-detail .bearers-list {
+      list-style: none;
+      padding: 0;
+      display: inline-block;
+      text-align: left;
+    }
+    .club-detail .bearers-list li {
+      padding-left: 24px;
+      position: relative;
+      margin-bottom: 6px;
+      color: #3d3d3d;
+    }
+    .club-detail .bearers-list li::before {
+      content: "◆";
+      color: #b8954b;
+      position: absolute;
+      left: 0;
+      font-size: 14px;
+    }
+
+    /* ---------- footer ---------- */
+    .footer {
+      background: #ece8e1;
+      padding: 44px 0;
+      margin-top: 20px;
+      border-top: 1px solid #d6cdbc;
+      text-align: center;
+      color: #4a4a4a;
+    }
+    .footer .quote {
+      font-style: italic;
+      color: #b8954b;
+      margin-top: 10px;
+      font-size: 14px;
+    }
+
+    /* ---------- responsive ---------- */
+    @media (max-width: 992px) {
+      .grid-2 { grid-template-columns: 1fr; gap: 30px; }
+    }
+    @media (max-width: 768px) {
+      .container { padding: 0 20px; }
+      .nav-links { display: none; }
+      .hero h1 { font-size: 38px; }
+      .section-title { font-size: 28px; }
+      .grid-auto-3 { grid-template-columns: 1fr 1fr; }
+      .grid-auto-4 { grid-template-columns: 1fr 1fr; }
+      .img-ph-circle { width: 160px; height: 160px; }
+      .img-ph-circle-sm { width: 130px; height: 130px; }
+      .img-ph-logo { width: 110px; height: 110px; }
+      .img-ph-circle-xs { width: 100px; height: 100px; }
+      .club-detail { padding: 24px 20px; }
+    }
+    @media (max-width: 480px) {
+      .hero h1 { font-size: 30px; }
+      .card { padding: 20px; }
+      .grid-auto-3 { grid-template-columns: 1fr; }
+      .grid-auto-4 { grid-template-columns: 1fr; }
+      .club-detail { padding: 20px 16px; }
+      .img-ph-circle { width: 140px; height: 140px; }
+      .img-ph-circle-sm { width: 120px; height: 120px; }
+      .img-ph-logo { width: 100px; height: 100px; }
+      .img-ph-circle-xs { width: 90px; height: 90px; }
+      .club-detail .club-name { font-size: 22px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="navbar">
+  <div class="container nav-container">
+    <a href="#" class="logo">PSG <span>POLYTECHNIC COLLEGE</span></a>
+    <div class="nav-links">
+      <a href="#">HOME</a>
+      <a href="#">ABOUT</a>
+      <a href="#">ACADEMICS</a>
+      <a href="#">STUDENTS UNION</a>
+      <a href="#">CONTACT</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="badge">Since 1939</div>
+    <h1>Students Union</h1>
+    <div class="gold-line"></div>
+    <p>Empowered by an ardent set of cabinet members, providing a platform to encourage technical, social, cultural skills and nurturing innovation.</p>
+  </div>
+</section>
+
+<div class="container">
+
+  <!-- MISSION -->
+  <div class="section">
+    <div class="card card-gold">
+      <h3 style="color: #b8954b; font-size: 22px; font-family: 'Times New Roman', serif; margin-bottom: 10px;">✦ Mission</h3>
+      <ul class="list-dot">
+        <li>To create a dynamic platform that fosters the development of technical skills and professional knowledge through active engagement in affiliated associations.</li>
+        <li>To encourage holistic growth by promoting social, cultural, and literacy activities through various clubs and student initiatives.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ABOUT PSG -->
+  <div class="section">
+    <h2 class="section-title">About PSG Polytechnic College</h2>
+    <div class="card">
+      <p><strong>PSG POLYTECHNIC COLLEGE</strong>, established in the year 1939, a pioneer Institute in the field of Technical Education and Research is a Government aided, ISO 9001 certified institution with Autonomous status from 1976. This aids it to have a flexible curriculum and updated syllabi. The Polytechnic College has the best laboratories with free access to the students and prepares them with the latest method of learning Industrial practices. The Industry attachment programme, compulsory for all courses provides the students an exposure for current Industrial practices. The college is located in the same campus as the PSG Industrial Institute.</p>
+      <p style="margin-top: 16px;">The Unique feature of PSG Polytechnic College is its close collaboration with educational Institutions and Industries, resulting in the cross fertilization of theory with practice. The Diploma Course students in Engineering are required to spend half a day every week in the PSG Industrial Institute, a full fledged manufacturing industry. This enables them to study the actual production processes and gives them the opportunity to observe the working of an Industry. This scheme has been hailed as a unique approach to inculcate the Industry culture among the students. In addition, a large number of projects, which the students undertake, are in collaboration with various Engineering Industries in and around Coimbatore, including PSG Industrial Institute to meet the challenges of Industry. The College is well equipped with laboratories and separate department libraries. The Departments which lay a strong foundation for students are nurtured by highly qualified faculty.</p>
+      <p style="margin-top: 16px;">Faculty at the Institution are among the most experienced. Several faculty members are pursuing their doctoral programmes at present. The dedication of the faculty and effective handling of the curriculum provide the students with an in-depth knowledge in their fundamentals and applications including current trends in Industries. The members of faculty actively participate Seminars, Conferences and also attend Winter and Summer Schools. The Department conducts courses for the Entrepreneurs and serving engineers to make them acquire the latest technical and production skills.</p>
+      <p style="margin-top: 16px;">A separate examination section headed by a Controller of Examinations conducts the examination. Sedulous progress has been the hallmark of PSG Polytechnic College. Presently <strong>Dr.B. Giriraj</strong> is the Principal of the Institution.</p>
+    </div>
+  </div>
+
+  <!-- ABOUT STUDENTS UNION -->
+  <div class="section">
+    <h2 class="section-title">About Students Union</h2>
+    <div class="card">
+      <p>The Students Union, generally abbreviated as the SU, is the official student organization at PSG Polytechnic College. The SU is the main representative body of the students and helps in the establishment of a healthy relationship between all the student activities and the administration. It also acts as a platform for the students of the college to showcase their talents. In addition to NSS and NCC, all the twelve clubs, twelve associations and two student chapters in the college work under its triumphant banner. The Students Union has its own unique set of cabinet members who are selected by the college authorities. All the activities performed by the SU are done under the careful guidance of the chief advisor and the faculty advisors of Students Union.</p>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- TEAM - LARGE IMAGE FRAMES -->
+  <!-- ============================================================ -->
+  <div class="section">
+    <h2 class="section-title">Our Team</h2>
+
+    <!-- PATRONS -->
+    <h3 class="section-title-sm section-title-sm-gold">Patrons</h3>
+    <div class="grid-2" style="margin-bottom: 30px; max-width: 900px; margin-left: auto; margin-right: auto;">
+
+      <div class="team-card">
+        <div class="img-ph img-ph-circle">
+          <img src="https://i.imgur.com/CKaPMSh.jpeg" alt="Shri L. Gopalakrishnan" onerror="this.style.display='none'; this.parentElement.textContent='📷'">
+        </div>
+        <div class="name">Shri.L.GOPALAKRISHNAN</div>
+        <div class="role">Managing Trustee</div>
+        <div class="id">PSG & Sons' Charity</div>
+      </div>
+
+      <div class="team-card">
+        <div class="img-ph img-ph-circle">
+          <img src="https://i.imgur.com/FjKrvdO.jpeg" alt="Dr. B. Giriraj" onerror="this.style.display='none'; this.parentElement.textContent='📷'">
+        </div>
+        <div class="name">Dr.B.GIRIRAJ</div>
+        <div class="role">Principal</div>
+      </div>
+    </div>
+
+    <!-- ADVISORS & TREASURER -->
+    <h3 class="section-title-sm section-title-sm-gold">Advisors &amp; Treasurer</h3>
+    <div class="grid-auto-3">
+      <div class="team-card">
+        <div class="img-ph img-ph-circle-sm">
+          <img src="https://i.imgur.com/pDyfl6t.jpeg" alt="Dr. V. Mohan Sivakumar" onerror="this.style.display='none'; this.parentElement.textContent='📷'">
+        </div>
+        <div class="name">Dr.V.MOHAN SIVAKUMAR</div>
+        <div class="role">Chief Advisor</div>
+      </div>
+      <div class="team-card">
+        <div class="img-ph img-ph-circle-sm">
+          <img src="https://i.imgur.com/c1bLbKr.jpeg" alt="Mr. S. Thirumalai Rajan" onerror="this.style.display='none'; this.parentElement.textContent='📷'">
+        </div>
+        <div class="name">Mr.S.THIRUMALAI RAJAN</div>
+        <div class="role">Faculty Advisor</div>
+      </div>
+      <div class="team-card">
+        <div class="img-ph img-ph-circle-sm">
+          <img src="https://i.imgur.com/JCrCtWA.jpeg" alt="Ms. M. Sasikala" onerror="this.style.display='none'; this.parentElement.textContent='📷'">
+        </div>
+        <div class="name">Ms.M.SASIKALA</div>
+        <div class="role">Faculty Advisor</div>
+      </div>
+      <div class="team-card">
+        <div class="img-ph img-ph-circle-sm">
+          <img src="https://i.imgur.com/VSLAehW.jpeg" alt="Dr. T. Kumaresan" onerror="this.style.display='none'; this.parentElement.textContent='📷'">
+        </div>
+        <div class="name">Dr.T.KUMARESAN</div>
+        <div class="role">Treasurer</div>
+      </div>
+    </div>
+
+    <!-- OFFICE BEARERS -->
+    <h3 class="section-title-sm section-title-sm-gold" style="margin-top: 36px;">Office Bearers 2024-25</h3>
+    <div class="grid-auto-3" style="max-width: 900px; margin-left: auto; margin-right: auto;">
+      <div class="team-card">
+        <div class="img-ph img-ph-circle-sm">
+          <img src="https://i.imgur.com/S679GIP.jpeg" alt="Keshav Kanna T" onerror="this.style.display='none'; this.parentElement.textContent='📷'">
+        </div>
+        <div class="name">Keshav Kanna T</div>
+        <div class="role">Chair person</div>
+        <div class="id">(23DG24)</div>
+      </div>
+      <div class="team-card">
+        <div class="img-ph img-ph-circle-sm">
+          <img src="https://i.imgur.com/dc02UIf.png" alt="Monikkasri B G" onerror="this.style.display='none'; this.parentElement.textContent='📷'">
+        </div>
+        <div class="name">Monikkasri B G</div>
+        <div class="role">Vice Chair person</div>
+        <div class="id">(23DX26)</div>
+      </div>
+      <div class="team-card">
+        <div class="img-ph img-ph-circle-sm">
+          <img src="https://i.imgur.com/y38cfQB.png" alt="Sarwin Krishna N" onerror="this.style.display='none'; this.parentElement.textContent='📷'">
+        </div>
+        <div class="name">Sarwin Krishna N</div>
+        <div class="role">Secretary (Men)</div>
+        <div class="id">(24M023)</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ASSOCIATIONS & BODIES -->
+  <div class="section">
+    <h2 class="section-title">Associations &amp; Bodies</h2>
+    <h3 class="section-title-sm">Academic Associations</h3>
+    <div class="grid-auto-4">
+      <span class="tag">Mechanical Engineering</span>
+      <span class="tag">Electrical &amp; Electronics</span>
+      <span class="tag">Textile Technology</span>
+      <span class="tag">Foundry Technology</span>
+      <span class="tag">Mechatronics</span>
+      <span class="tag">Apparel Technology</span>
+      <span class="tag">Computer Networking</span>
+      <span class="tag">Computer Engineering</span>
+      <span class="tag">Automobile Engineering</span>
+      <span class="tag">ECE</span>
+      <span class="tag">Information Technology</span>
+      <span class="tag">Science Association</span>
+    </div>
+    <h3 class="section-title-sm" style="margin-top: 32px;">Student Chapters</h3>
+    <div class="flex-wrap">
+      <span class="tag tag-gold">Institution of Engineers</span>
+      <span class="tag tag-gold">Institute of Indian Foundrymen</span>
+    </div>
+    <h3 class="section-title-sm" style="margin-top: 32px;">Wings</h3>
+    <div class="flex-wrap">
+      <span class="tag">National Service Scheme (NSS)</span>
+      <span class="tag">National Cadet Corps (NCC)</span>
+      <span class="tag">Rover Crew &amp; Ranger Team</span>
+      <span class="tag">Students Rapid Response Force</span>
+    </div>
+  </div>
+
+  <!-- CLUBS LIST -->
+  <div class="section">
+    <h2 class="section-title">Clubs</h2>
+    <div class="grid-auto-4">
+      <span class="tag">Brains Trust</span>
+      <span class="tag">Tamil Mandram</span>
+      <span class="tag">Fine Arts Club</span>
+      <span class="tag">Character &amp; Personality</span>
+      <span class="tag">Women Development Cell</span>
+      <span class="tag">Environment Development</span>
+      <span class="tag">Youth Red Cross</span>
+      <span class="tag">Entrepreneur Club</span>
+      <span class="tag">Music Club</span>
+      <span class="tag">Road Safety Patrol</span>
+      <span class="tag">Rangers &amp; Rovers</span>
+      <span class="tag">Photographic Club</span>
+      <span class="tag">Interact Club</span>
+      <span class="tag">Readers Club</span>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- CLUBS & CHAPTERS DETAILS - CENTERED LAYOUT -->
+  <!-- ============================================================ -->
+  <div class="section">
+    <h2 class="section-title">Clubs &amp; Chapters — Details</h2>
+    <div id="clubDetailsContainer"></div>
+  </div>
+
+  <!-- NEWS & EVENTS -->
+  <div class="section">
+    <h2 class="section-title">News &amp; Events</h2>
+    <div class="card"><h3 class="section-title-sm">2024 – 2025</h3>
+      <ul class="list-dot">
+        <li>The First Year and Lateral Entry Orientation Programme was conducted from 12th to 14th June 2024.</li>
+        <li>The Students' Union for the academic year 2024–2025 was inaugurated on 15th July 2024. Chief Guests: Mr. S. A. Kumar, Deputy Chief Electrical Engineer, Southern Railway Gp. Capt. J. Anandakumar, Commissioned Officer, Indian Air Force Mrs. D. Umapriya, Woman Entrepreneur</li>
+        <li>Independence Day was celebrated on 15th August 2024.</li>
+        <li>Teachers' Day was celebrated on 5th September 2024.</li>
+        <li>Polyfest 2K24 was conducted on 14th September 2024.</li>
+        <li>Talentrek 2K24, the third edition of Talentrek—an exclusive event designed for students of Classes IX and X in and around Coimbatore—was held on 24th August 2024.</li>
+        <li>Pongal Festival was celebrated on 11th January 2025.</li>
+        <li>Republic Day was celebrated on 26th January 2025.</li>
+      </ul>
+    </div>
+    <div class="card"><h3 class="section-title-sm">2023 – 2024</h3>
+      <ul class="list-dot">
+        <li>First year & lateral entry orientation program was held on 19th – 21st of June.</li>
+        <li>Students Union 2023-2024 was inaugurated on July 19, 2023. Chief Guest: Mr. T.N. SIVAKUMAR managing director of electronics and control corporation Coimbatore.</li>
+        <li>Independence Day was celebrated on August 15, 2023.</li>
+        <li>Teachers Day celebrations on September 5, 2023.</li>
+        <li>Polyfest 2023-24 was conducted on September 23rd, 2023.</li>
+        <li>Talentrek was held on October 14th, 2023.</li>
+        <li>Republic Day was celebrated on January 26, 2024.</li>
+      </ul>
+    </div>
+    <div class="card"><h3 class="section-title-sm">2022 – 2023</h3>
+      <ul class="list-dot">
+        <li>First year & lateral entry orientation program was held on 1st - 3rd of August.</li>
+        <li>Independence Day was celebrated on August 15, 2022.</li>
+        <li>Teachers Day celebrations on September 5, 2022.</li>
+        <li>Students Union 2022-2023 was inaugurated on September 16, 2022. Chief Guest: Mr. J. GANESHKUMAR, Managing Director, Indo Shell Pvt.Ltd.</li>
+        <li>Polyfest 2022-23 was conducted on November 18th, 2022.</li>
+        <li>Republic Day was celebrated on January 26, 2023.</li>
+        <li>Talentrek was held on 25th February, 2023.</li>
+      </ul>
+    </div>
+    <div class="card"><h3 class="section-title-sm">2021 – 2022</h3>
+      <ul class="list-dot">
+        <li>First year orientation program was held on September 09, 2021.</li>
+        <li>Teachers Day celebrations on September 5, 2021.</li>
+        <li>NCC tribute to CSD Bipin Rawat, September 18, 2021.</li>
+        <li>Student Union was inaugurated on November 11, 2021. Chief Guest: Mr. L K M Adhi.</li>
+        <li>Polyfest 2021-22 was conducted on December 12, 2021.</li>
+        <li>Republic Day was celebrated on January 26, 2022.</li>
+        <li>COVID Vaccination Camp was held on February 12, 2022.</li>
+      </ul>
+    </div>
+    <div class="card"><h3 class="section-title-sm">2020 – 2021</h3>
+      <ul class="list-dot">
+        <li>Orientation for first year diploma students held on September 17 & 18, 2020.</li>
+        <li>SU inauguration was held on October 19, 2020. Chief Guest: Mr.K.P.M.Muthukumaran.</li>
+        <li>POLYFEST 2020 are conducted on November 28, 2020.</li>
+      </ul>
+    </div>
+    <div class="card"><h3 class="section-title-sm">2019 – 2020</h3>
+      <ul class="list-dot">
+        <li>Orientation for lateral entry diploma students conducted on June 03, 2019.</li>
+        <li>Orientation for first year diploma students held on June 03 & 04, 2019.</li>
+        <li>Yoga Day was celebrated on June 21, 2019.</li>
+        <li>SU inauguration was held on June 27, 2019. Chief Guest: Mr.V.Parthiban.</li>
+        <li>Dr.A.P.J.Abdul Kalam Remembrance Day Celebrations were held on July 27, 2019.</li>
+        <li>Independence Day was celebrated on August 15, 2019.</li>
+        <li>Fit India Pledge and Walkathon was conducted on August 29, 2019.</li>
+        <li>Teachers Day was celebrated on September 5, 2019.</li>
+        <li>POLYFEST 2019 and Engineers Day Celebrations were conducted on September 14, 2019.</li>
+      </ul>
+    </div>
+    <div class="card"><h3 class="section-title-sm">2018 – 2019</h3>
+      <ul class="list-dot">
+        <li>First year orientation program was conducted on June 13, 2018.</li>
+        <li>Students Union was inaugurated on July 4, 2018.</li>
+        <li>Independence Day was celebrated on August 15, 2018.</li>
+        <li>Polyfest was conducted on September 8, 2018.</li>
+        <li>Republic Day celebrations on January 26, 2019.</li>
+        <li>Polymeet was held on February 9, 2019.</li>
+        <li>Polytech Day was held on March 2019.</li>
+      </ul>
+    </div>
+    <div class="card"><h3 class="section-title-sm">2017 – 2018</h3>
+      <ul class="list-dot">
+        <li>First year orientation program was conducted on June 12 & 13, 2017</li>
+        <li>Students Union was inaugurated on July 6, 2017.</li>
+        <li>Independence Day was celebrated on August 15, 2017.</li>
+        <li>Polyfest was conducted on September 16 & 17, 2017.</li>
+        <li>Republic Day celebrations on January 26, 2018.</li>
+        <li>Polymeet was held on January 28, 2018.</li>
+        <li>Diploma Induction Programme held on February 28, 2018.</li>
+        <li>Polytech Day was held on March 9, 2018.</li>
+      </ul>
+    </div>
+    <div class="card"><h3 class="section-title-sm">2016 – 2017</h3>
+      <ul class="list-dot">
+        <li>Diploma Induction Programme on 27.02.17</li>
+        <li>Polymeet Conducted On 28.01.17</li>
+        <li>Republic Day celebrated on 26.01.17</li>
+        <li>Polyfest conducted on 16th and 17th of September</li>
+        <li>Independence Day celebrated on 15.08.16</li>
+      </ul>
+    </div>
+    <div class="card"><h3 class="section-title-sm">2015 – 2016</h3>
+      <ul class="list-dot">
+        <li>Diploma Induction Programme on 29.02.16</li>
+        <li>Polymeet Conducted On 13.02.16</li>
+        <li>Republic Day celebrated on 26.01.16</li>
+      </ul>
+    </div>
+    <div class="card"><h3 class="section-title-sm">2014 – 2015</h3>
+      <ul class="list-dot">
+        <li>Chennai Flood Donation Camp on 23.12.15</li>
+        <li>INTRAMS conducted on 19 and 20.09.2015</li>
+        <li>Teachers Day Celebrated on 05.09.2015</li>
+        <li>Independence Day Celebrated on 15.08.15</li>
+        <li>Students' Union Inaugrated on 05.08.15</li>
+        <li>Road Safety Awareness programme conducted on 08.07.15</li>
+        <li>Diploma Orientation conducted from 30.06.15 to 02.07.15</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ACHIEVEMENTS -->
+  <div class="section">
+    <h2 class="section-title">Achievements</h2>
+    <div class="card">
+      <h3 class="section-title-sm">2020 – 2021</h3>
+      <p><strong>Student of The Year:</strong> Ms. SWETHA S (18DX24) – Computer Engineering</p>
+      <ul class="list-arrow">
+        <li><strong>Best Sportsperson (Men):</strong> Mr. Prasanna Kumar S (18DM31)</li>
+        <li><strong>Best Sportsperson (Women):</strong> Ms. Sneha Mithra H (18DM42)</li>
+        <li><strong>Best NCC Cadet:</strong> Mr. D. Vivek Narayanan (18MO38)</li>
+        <li><strong>Best NSS Volunteer:</strong> Mr. Ranjith Ram R (17LM18)</li>
+      </ul>
+      <p style="margin-top: 14px;"><strong>Alumni Awards 2020–21</strong></p>
+      <ul class="list-arrow">
+        <li>Mechanical: Mr. Gowthem Krishnan D.K (18DM010)</li>
+        <li>Electrical: Mr. S. Jayakrishna (18E011)</li>
+        <li>Textile: Ms. K. Darshini (18TO05)</li>
+        <li>Computer: Mr. D. Sai Pravin (18DX17)</li>
+        <li>Automobile: Mr. P. Vijay (18DB34)</li>
+        <li>and more (see document for full list)</li>
+      </ul>
+      <p style="margin-top: 14px;"><strong>Best Outgoing Students 2020–21</strong></p>
+      <ul class="list-arrow">
+        <li>Mechanical: Mr. Vivek Narayanan D (18MO38)</li>
+        <li>Electrical: Ms. Sri Pavya (18E031)</li>
+        <li>Computer: Ms. Swetha S (18DX24)</li>
+        <li>Automobile: Mr. Arichand Rahul CM (18DB05)</li>
+        <li>and more (see document)</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3 class="section-title-sm">2018 – 2019</h3>
+      <p><strong>Student of The Year:</strong> Ms. Swetha S (18DX24) – Computer Engineering</p>
+      <ul class="list-arrow">
+        <li><strong>Best Sportsperson (Men):</strong> Mr. Prasanna Kumar S (18DM31)</li>
+        <li><strong>Best Sportsperson (Women):</strong> Ms. Sneha Mithra H (18DM42)</li>
+        <li><strong>Best NCC Cadet:</strong> Mr. D. Vivek Narayanan (18MO38)</li>
+        <li><strong>Best NSS Volunteer:</strong> Mr. Ranjith Ram R (17LM18)</li>
+      </ul>
+      <p style="margin-top: 14px;"><strong>Alumni Awards 2018–19</strong> (partial list)</p>
+      <ul class="list-arrow">
+        <li>Mechanical: Mr. Gowthem Krishnan D.K (18DM010)</li>
+        <li>Electrical: Mr. S. Jayakrishna (18E011)</li>
+        <li>Textile: Ms. K. Darshini (18TO05)</li>
+        <li>Computer: Mr. D. Sai Pravin (18DX17)</li>
+      </ul>
+    </div>
+  </div>
+
+</div> <!-- end container -->
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <p>© 2026 PSG Polytechnic College. All Rights Reserved.</p>
+    <div class="quote">"Let there be charity so that others can share my family's prosperity" — Shri P S Govindaswamy Naidu</div>
+  </div>
+</footer>
+
+<!-- ============================================================ -->
+<!-- JAVASCRIPT - CLUB DETAILS WITH CENTERED LAYOUT -->
+<!-- ============================================================ -->
+<script>
+  // ================================================================
+  // IMAGE HELPER FUNCTION
+  // ================================================================
+  function getImageHtml(fileId, altText, fallbackText) {
+    if (fileId && fileId !== 'your-file-id-here' && fileId !== '') {
+      if (fileId.startsWith('http')) {
+        return `<img src="${fileId}" alt="${altText}" onerror="this.style.display='none'; this.parentElement.textContent='📷'">`;
+      }
+      return `<img src="https://drive.google.com/uc?export=download&id=${fileId}" alt="${altText}" onerror="this.style.display='none'; this.parentElement.textContent='📷'">`;
+    }
+    return fallbackText || '📷';
+  }
+
+  // ================================================================
+  // CLUB DATA - Add your club logo and faculty photo links here
+  // ================================================================
+  const clubsData = [
+    {
+      name: "BRAINS TRUST",
+      logo: "https://i.imgur.com/7kcVBB8.png",
+      objective: "To nurture leadership qualities, strengthen team spirit, and enhance effective communication skills among students.",
+      faculty: [
+        { name: "Dr. S. Shalini", fileId: "https://i.imgur.com/66khkn3.png" }
+      ],
+      bearers: ["Deepak Kumar S (22DI13) – Secretary", "Harish Adhithya S P (23T011) – Joint Secretary"]
+    },
+    {
+      name: "CHARACTER AND PERSONALITY DEVELOPMENT CLUB",
+      logo: "https://i.imgur.com/xbjuym0.png",
+      objective: "To cultivate strong character, positive attitude, and confident personality among members through continuous learning and self-development activities.",
+      faculty: [
+        { name: "Mr. R. Selladurai", fileId: "https://i.imgur.com/Jm0b245.png" }
+      ],
+      bearers: ["Ajeendhar M (22M001) (SW) – Secretary", "Rohit G K (23M024) – Joint Secretary"]
+    },
+    {
+      name: "ENVIRONMENT DEVELOPMENT CLUB",
+      logo: "https://i.imgur.com/eLzQwMs.png",
+      objective: "To create awareness about environmental issues and promote eco-friendly practices among students through education, action, and community initiatives.",
+      faculty: [
+        { name: "Dr. V. Chandrasekaran", fileId: "https://i.imgur.com/Z0OvcYt.png" }
+      ],
+      bearers: ["Kannan K K (22DA03) – Secretary", "Sanjay Y (23DQ41) – Joint Secretary"]
+    },
+    {
+      name: "FINE ARTS CLUB",
+      logo: "https://i.imgur.com/wt93Rju.png",
+      objective: "To foster appreciation for the arts, inspire creativity, and provide a platform for students to explore and express their artistic talents.",
+      faculty: [
+        { name: "Mr. A. N. Sai Krishnan", fileId: "https://i.imgur.com/FNwPT8p.png" }
+      ],
+      bearers: ["Sreeshanth M (22M028) – Secretary", "Harini N (23DX14) – Joint Secretary"]
+    },
+    {
+      name: "TAMIL MANDRAM",
+      logo: "https://i.imgur.com/4KS30N0.png",
+      objective: "To promote the richness of the Tamil language and to nurture appreciation for Tamil literature, culture, and arts among students.",
+      faculty: [
+        { name: "Dr. T. Kumaresan", fileId: "https://i.imgur.com/CYbxjLv.jpeg" }
+      ],
+      bearers: ["Jasmine G (22D006) – Secretary", "Kalaiarasu S (24IH03) – Joint Secretary"]
+    },
+    {
+      name: "WOMEN DEVELOPMENT CELL",
+      logo: "https://i.imgur.com/LzYM3e6.png",
+      objective: "To empower women by fostering confidence, leadership, and resilience, and by providing equal opportunities to overcome challenges and achieve personal and professional growth.",
+      faculty: [
+        { name: "Ms. S. Valarmathi", fileId: "https://i.imgur.com/McOC8kb.png" }
+      ],
+      bearers: ["Bernice Renita F (22DC06) – Secretary", "Monikka B G (23DX26) – Joint Secretary"]
+    },
+    {
+      name: "YOUTH RED CROSS",
+      logo: "https://i.imgur.com/YPEme3M.png",
+      objective: "It is a voluntary relief movement whose purpose is to protect life, health and to ensure respect for the human life. The YRC includes Blood donor wing and Red ribbon club.",
+      faculty: [
+        { name: "Mr. S. Krishnamoorthi", fileId: "https://i.imgur.com/xpDpL1s.png" }
+      ],
+      bearers: ["Priscilla Immaculate B (23EH03) – Secretary", "Arish Jahanathan D (23E011) – Joint Secretary"]
+    },
+    {
+      name: "ENTREPRENEUR CLUB",
+      logo: "https://i.imgur.com/4iaw9fi.png",
+      objective: "To organize entrepreneurship promotional and motivational programs such as success stories, team building workshops, skill development programs and to motivate the students to participate/ organize the motivational programs.",
+      faculty: [
+        { name: "Dr. M. Senthil Kumar", fileId: "https://i.imgur.com/IPjHvsp.png" }
+      ],
+      bearers: ["Jayvikram D (22DC21) – Secretary", "Sujeeth D S (23DI49) – Joint Secretary"]
+    },
+    {
+      name: "CYBER CLUB",
+      logo: "https://i.imgur.com/4iaw9fi.png",
+      objective: "To promote cyber awareness, ethical hacking, and digital literacy among students.",
+      faculty: [
+        { name: "Mr. A. Kathiresan", fileId: "https://i.imgur.com/sIuLg2u.png" }
+      ],
+      bearers: ["Manisha S (22DI20) – Secretary", "Indrajith Kaliaperumal (23DI21) – Joint Secretary"]
+    },
+    {
+      name: "MUSIC AND BAND",
+      logo: "https://i.imgur.com/4iaw9fi.png",
+      objective: "The Music and Band club aims at quintessence of the nation's rich musical heritage, keeping modern interests and musical trends.",
+      faculty: [
+        { name: "Dr. D. Kavitha", fileId: "https://i.imgur.com/RtkeuLu.png" },
+        { name: "Mr. M. Saravana Kumar", fileId: "https://i.imgur.com/WUXOMsC.png" }
+      ],
+      bearers: ["Hemanand M (22DG15) – Secretary", "Agney Manas L B (23DG02) – Joint Secretary"]
+    },
+    {
+      name: "ROVER CREW & RANGER TEAM",
+      logo: "https://i.imgur.com/4iaw9fi.png",
+      objective: "To contribute the development of young people in achieving their full physical, intellectual, social & spiritual potentials as individuals, as responsible citizens.",
+      faculty: [
+        { name: "Mr. G. Nirmal Kumar", fileId: "https://i.imgur.com/bsRE3vm.png" },
+        { name: "Ms. Danalaxmi Purushothaman", fileId: "https://i.imgur.com/QlD8h2s.png" }
+      ],
+      bearers: ["Mohamed Sameer S (22M019) – Secretary", "Kamali S (23E014) – Joint Secretary"]
+    },
+    {
+      name: "ROAD SAFETY PATROL",
+      logo: "https://i.imgur.com/4iaw9fi.png",
+      objective: "The aim of this club is to create 'Road Safety' among the road users to reduce the accidents and develop young ambassadors to take up this to each individual and see that no one should die on the roads.",
+      faculty: [
+        { name: "Mr. N. Thampiraj", fileId: "https://i.imgur.com/cIitj2S.png" }
+      ],
+      bearers: ["Rakshitha D (22DM37) – Secretary", "Ajay R (23DC03) – Joint Secretary"]
+    },
+    {
+      name: "PHOTOGRAPHIC CLUB",
+      logo: "https://i.imgur.com/4iaw9fi.png",
+      objective: "To provide a supportive environment for interested students to share their creativity, knowledge and passion for photography.",
+      faculty: [
+        { name: "Mr. A. Kamaraj", fileId: "https://i.imgur.com/c9vNd2n.png" }
+      ],
+      bearers: ["Nithish Krishna S (22DM33) – Secretary", "Monika S (24XH05) – Joint Secretary"]
+    },
+    {
+      name: "INSTITUTE OF INDIAN FOUNDRY MEN",
+      logo: "https://i.imgur.com/4iaw9fi.png",
+      objective: "The Institute of Indian Foundry Men (Students Chapter) was established in the year 2015 to enhance the latest knowledge on foundry and materials engineering through several guest lectures, industrial visits and skill‑oriented training.",
+      faculty: [
+        { name: "Mr. P. Senthilkumar", fileId: "https://i.imgur.com/6opZ5zr.png" }
+      ],
+      bearers: ["Nithish Hari S (22DF03) – Secretary", "Mohammad Shuaib G (23DQ23) – Joint Secretary"]
+    },
+    {
+      name: "INSTITUTION OF ENGINEERS",
+      logo: "https://i.imgur.com/4iaw9fi.png",
+      objective: "The Institute of Engineering is to enhance the knowledge about our engineering, books & about PG through several Guest lectures.",
+      faculty: [
+        { name: "Dr. M. Arasu", fileId: "https://i.imgur.com/yejfOl8.png" }
+      ],
+      bearers: ["Abishek K S (22DF01) – Secretary", "Makesh K. Nair (23DF17) – Joint Secretary"]
+    },
+    {
+      name: "NATIONAL CADET CORPS (NCC)",
+      logo: "https://i.imgur.com/4iaw9fi.png",
+      objective: "The NCC is the Indian military cadet corps headquartered in New Delhi, open to school and college students on a voluntary basis. It recruits cadets from high schools, colleges, and universities across India.",
+      faculty: [
+        { name: "Captain A. Kathiresan", fileId: "https://i.imgur.com/sIuLg2u.png" }
+      ],
+      bearers: ["Deepan Raj M (DEEE) – Senior Under Officer", "Vignesh (DME) – Cadet Under Officer", "Sandhiya R (DIT) – Company Quartermaster Sergeant"]
+    },
+    {
+      name: "STUDENTS RAPID RESPONSE FORCE",
+      logo: "https://i.imgur.com/4iaw9fi.png",
+      objective: "To train students for emergency response and disaster management.",
+      faculty: [
+        { name: "Mr. D. Ramesh", fileId: "https://i.imgur.com/YB3OnJC.png" }
+      ],
+      bearers: ["Seghu Santhanu R (22DB21) – Secretary", "Sharan K T (23DI42) – Joint Secretary"]
+    },
+    {
+      name: "NATIONAL SERVICE SCHEME (NSS)",
+      logo: "https://i.imgur.com/4iaw9fi.png",
+      objective: "The main objective of the National Service Scheme is the development of personality of students through community service.",
+      faculty: [
+        { name: "Mr. A. Sivakumar", fileId: "https://i.imgur.com/HyaiPVe.png " },
+        { name: "Mrs. M. Sivapriya", fileId: "https://i.imgur.com/RSUlWKj.png" }
+      ],
+      bearers: ["Navin A M (22M021) – Secretary", "Kanish T V (23DM19) – Joint Secretary"]
+    },
+    {
+      name: "EXPLORE",
+      logo: "https://i.imgur.com/4iaw9fi.png",
+      objective: "Explore is the brain child of PSG Polytechnic College. It is a yearly publication which was started with the intention of nurturing the creativity and imagination of our students. It contains articles, poetry, paintings and photographs done essentially by our students.",
+      faculty: [
+        { name: "Mr. M. Sabareedharan", fileId: "https://i.imgur.com/SEU3TW1.png" }
+      ],
+      bearers: []
+    }
+  ];
+
+  // ================================================================
+  // RENDER CLUB CARDS - CENTERED LAYOUT
+  // ================================================================
+  const container = document.getElementById('clubDetailsContainer');
+
+  clubsData.forEach((club) => {
+    const div = document.createElement('div');
+    div.className = 'club-detail';
+
+    // Logo centered
+    const logoHtml = `
+      <div class="club-logo">
+        <div class="img-ph img-ph-logo">
+          ${getImageHtml(club.logo, club.name + ' logo', '🏛️')}
+        </div>
+      </div>
+      <div class="club-name">${club.name}</div>
+    `;
+
+    // Objective
+    const objectiveHtml = `
+      <div class="club-section">
+        <span class="club-section-title">Objective</span>
+        <div class="club-section-content">${club.objective}</div>
+      </div>
+    `;
+
+    // Faculty Advisors - centered
+    let facultyHtml = '';
+    if (club.faculty && club.faculty.length > 0) {
+      const facultyItems = club.faculty.map(f => {
+        return `
+          <div class="faculty-item">
+            <div class="img-ph img-ph-circle-xs">
+              ${getImageHtml(f.fileId, f.name, '👤')}
+            </div>
+            <span class="faculty-name">${f.name}</span>
+          </div>
+        `;
+      }).join('');
+      
+      facultyHtml = `
+        <div class="club-section">
+          <span class="club-section-title">Faculty Advisor${club.faculty.length > 1 ? 's' : ''}</span>
+          <div class="faculty-container">${facultyItems}</div>
+        </div>
+      `;
+    }
+
+    // Office Bearers - centered
+    let bearersHtml = '';
+    if (club.bearers && club.bearers.length > 0) {
+      const bearersList = club.bearers.map(b => `<li>${b}</li>`).join('');
+      bearersHtml = `
+        <div class="club-section">
+          <span class="club-section-title">Office Bearers</span>
+          <div class="club-section-content">
+            <ul class="bearers-list">${bearersList}</ul>
+          </div>
+        </div>
+      `;
+    } else {
+      bearersHtml = `
+        <div class="club-section">
+          <span class="club-section-title">📋 Office Bearers</span>
+          <div class="club-section-content" style="color:#8a8a8a;">To be announced</div>
+        </div>
+      `;
+    }
+
+    div.innerHTML = `
+      ${logoHtml}
+      ${objectiveHtml}
+      ${facultyHtml}
+      ${bearersHtml}
+    `;
+    container.appendChild(div);
+  });
+
+  console.log('✅ Club details with centered layout ready!');
+</script>
+
+</body>
+</html>
